@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <style>
+        *{
+           padding:0px;
+           margin:0px;
+        }
+       :root{
+           --moveSpeed-pc:60s;
+           --moveSpeed-mobile:120s;
+
+       }
+        body{
+            position:relative;
+            top:0;
+            left:0;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./clearsky.jpg);
+            background-color:black;
+            /* background-size:cover; */
+            /* background-position:center; */
+            /* background-repeat: repeat; */
+            /* animation:move var(--moveSpeed-pc) linear infinite; */
+            overflow: hidden;
+        }
+        @keyframes move{
+            0%{
+            background-position:0% 0%;
+            }
+           25%{
+               background-position: 100% 0%;
+           }
+           50%{
+               background-position: 100% 100%;
+           }
+           75%{
+               background-position: 0% 100%;
+           }
+           100%{
+            background-position:0% 0%;
+           }
+        }
+        
+        @keyframes move1{
+            0%{
+                background-position:0% 0%;
+            }
+            50%{
+                background-position:50% 50%;
+            }
+            100%{
+                background-position:100% 100%;
+            }
+        }
+@keyframes bulingbuling2{
+    0%,100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+@keyframes bulingbuling{
+    0%,100%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+}
+.star{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height:100%;
+}
+        .star1{
+        opacity:0;
+        background-image: url(./star1.png);
+        /* animation-delay: -2s; */
+        /* animation:bulingbuling 4s linear 1s infinite,move var(--moveSpeed-pc) linear infinite; */
+        animation:bulingbuling 4s linear 1s infinite;
+}
+.star2{
+    opacity:0;
+background-image: url(./star2.png);
+        /* animation-delay: -4s; */
+        /* animation:bulingbuling 5s linear 4s infinite,move var(--moveSpeed-pc) linear infinite; */
+        animation: bulingbuling 5s linear 4s infinite;
+}
+.star3{
+    opacity:0;
+    background-image: url(./star3.png);
+        /* animation-delay: -5s; */
+        /* animation:bulingbuling 6s linear 2s infinite,move var(--moveSpeed-pc) linear infinite; */
+        animation: bulingbuling 6s linear 2s infinite;
+}
+@media screen and (max-width: 420px){
+    @keyframes move{
+            0%{
+            background-position:0% 0%;
+            }
+           48%{
+               background-position: 100% 0%;
+           }
+           50%{
+               background-position: 100% 100%;
+           }
+           95%{
+               background-position: 0% 100%;
+           }
+           100%{
+            background-position:0% 0%;
+           }
+        }
+    body{
+        animation:move var(--moveSpeed-mobile) linear infinite;
+    }
+    .star1{
+        animation:bulingbuling 4s linear 1s infinite,move var(--moveSpeed-mobile) linear infinite;
+    }
+    .star2{
+        animation:bulingbuling 6s linear 4s infinite,move var(--moveSpeed-mobile) linear infinite;
+}
+    .star3{
+        animation:bulingbuling 6s linear 2s infinite,move var(--moveSpeed-mobile) linear infinite;
+}
+};
+
+
+
+
+.cutdown{
+    display: flex;
+    flex-direction:column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 2vh;
+    min-width:280px;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    }
+.cutdown .excerpt{
+    width: 100%;
+    font-family: cursive,serif;
+    text-shadow: 2px 2px 5px #2bd2ff,
+                -2px -2px 5px #2bd2ff,
+                0px 0px 10px #2bd2ff;
+    font-size: 1.8em;
+    text-align: center;
+ 
+}
+.cutdown .timedown{
+display: flex;
+justify-content: center;
+width:100%;
+}
+.cutdown .timedown .box{
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height:6rem;
+min-height: 75px;
+width: 8rem;
+min-width: 70px;
+text-align: center;
+}
+.cutdown .timedown .box h3{
+font-size: 3em;
+text-shadow: 0 0 20px #0aafe6,
+0 2px 0 #daf6ff;
+}
+.cutdown .timedown .box span{
+font-size: 1.5em;
+}
+/* 选择选项卡 */
+.wormholes{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: -14vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: center;
+    z-index: 1;
+}
+.wormholes h3{
+    font-family: 'Cinzel', serif !important;
+   text-align: center;
+    color:#fff;
+    font-size: 3rem;
+    letter-spacing:.3rem;
+    z-index: 1;
+    
+}
+.wormholes .verse{
+    width: 90%;
+    font-family: cursive,sans-serif;
+    color:#fff;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 1.7rem;
+    padding-top: 2vh;
+    border-top: 1px solid rgb(207, 207, 207);
+}
+.wormholes .introduce{
+    text-align: center;
+    color:#daf6ff;
+    z-index: 1;
+    margin-top: 1.5rem;
+}
+.wormholes .introduce .tag{
+    font-size: 1.3rem;
+}
+@-webkit-keyframes cursorflash{
+   0%{
+        color: #fff;
+    }
+   
+    100%{
+        color: transparent;
+    }
+}
+@keyframes cursorflash{
+   0%{
+        color: #fff;
+    }
+   
+    100%{
+        color: transparent;
+    }
+}
+.wormholes .introduce .textCursor{
+    color:#fff;
+    font-size: 1.5rem;
+    -webkit-animation: cursorflash 1s  infinite;
+            animation: cursorflash 1s  infinite;
+}
+.wormholes .lincense{
+   margin-top: 5vh;
+   color:#fff;
+    font-size:1rem;
+}
+.wormholes .lincense a{
+    color:#2bd2ff;
+}
+.wormholes .guidepost{
+    display:flex;
+    justify-content: center;
+    color:#fff;
+    margin-top:2vh;
+    padding: 5px;
+    border-top: 3px solid #fff;
+}
+.wormholes .guidepost .pages{
+    text-align: center;
+    display: inline-block;
+    color:#f5f7f8;
+  
+}
+.guidepost a .iconfont{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    font-size: 2rem;
+    width:7rem;
+}
+.wormholes .guidepost .pages:hover .pages-title{
+    text-shadow:2px 2px 5px #2bd2ff,
+    -2px -2px 5px #2bd2ff;
+}
+.wormholes .guidepost .pages:hover .iconfont{
+    text-shadow:2px 2px 5px #2bd2ff,
+    -2px -2px 5px #2bd2ff;
+}
+.pages .pages-title{
+    margin-top: 1vh;
+font-size:1.3rem;
+}
+.return{
+    margin-bottom: 5vh;
+    border:1px solid #fff;
+    overflow: hidden;
+    padding: 2px 5px;
+    border-radius:3px;
+    z-index: 100;
+}
+.return a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color:#fff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="cutdown">
+        <div class="excerpt"></div>
+        <div class="timedown">
+            <div class="box">
+                <h3 id="day">00</h3><span>day</span>
+            </div>
+            <div class="box">
+                <h3 id="hour">00</h3><span>hour</span>
+            </div>
+            <div class="box">
+                <h3 id="minute">00</h3><span>minute</span>
+            </div>
+            <div class="box">
+                <h3 id="second">00</h3><span>second</span>
+            </div>
+        </div>
+    </div>
+    <div class="wormholes">
+        <h3>ANTIBAEG</h3>
+        <div class="verse">花径不曾缘客扫，蓬门今始为君开。</div>
+        <div class="introduce"><span class="tag"></span><span class="textCursor">|</span></div>
+        <div class="lincense">除特殊注明外，博客采用<a rel="license"
+                href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>协议进行许可。</div>
+        <div class="guidepost"><a class="pages" href="/blog/">
+                <div class="iconfont icon-wenzhang"></div>
+                <div class="pages-title">博客</div>
+            </a><a class="pages" href="/blog/life/">
+                <div class="iconfont icon-haibian"></div>
+                <div class="pages-title">日常</div>
+            </a><a class="pages" href="/blog/record/">
+                <div class="iconfont icon-duanluo"></div>
+                <div class="pages-title">一句</div>
+            </a><a class="pages" href="/blog/about/">
+                <div class="iconfont icon-iconset0103"></div>
+                <div class="pages-title">关于</div>
+            </a><a class="pages" href="/blog/message/">
+                <div class="iconfont icon-icon--"></div>
+                <div class="pages-title">留言</div>
+            </a></div>
+    </div>
+    <div class="return" data-menuanchor="firstPage" id="#Menu" style="visibility:hidden"><a
+            href="#firstPage">返回上一页</a>
+    </div>
+</body>
+</html> 
